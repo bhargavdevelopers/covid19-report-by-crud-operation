@@ -56,7 +56,7 @@ app.get("/states/:stateId/", async (request, response) => {
             * 
         FROM 
             state 
-        ORDER BY 
+        WHERE 
             state_id = ${stateId};`;
   const state = await db.get(getStateQuery);
   response.send({
@@ -102,7 +102,7 @@ app.get("/districts/:districtId/", async (request, response) => {
             * 
         FROM 
             district
-        ORDER BY
+        WHERE
             district_id = ${districtId};`;
   const district = await db.get(getDistrictQuery);
   response.send({
@@ -160,7 +160,7 @@ app.put("/districts/:districtId/", async (request, response) => {
 });
 
 //Get stats API
-app.get("/states/:statesId/stats/", async (request, response) => {
+app.get("/states/:stateId/stats/", async (request, response) => {
   const { stateId } = request.params;
   const getStatsQuery = `
         SELECT 
