@@ -137,7 +137,7 @@ app.put("/districts/:districtId/", async (request, response) => {
     districtName,
     stateId,
     cases,
-    cures,
+    cured,
     active,
     deaths,
   } = districtDetails;
@@ -149,7 +149,7 @@ app.put("/districts/:districtId/", async (request, response) => {
       district_name='${districtName}',
       state_id=${stateId},
       cases=${cases},
-      cures=${cures},
+      cured=${cured},
       active=${active},
       deaths=${deaths}
     WHERE
